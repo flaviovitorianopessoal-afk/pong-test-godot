@@ -25,3 +25,15 @@ func _process(delta: float) -> void:
 		isBallRunning = true
 	if isBallRunning:
 		position += direction * speed * delta
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "LeftWall" or body.name == "RightWall":
+		direction.x = direction.x * -1
+		
+	if body.name == "UpWall" or body.name == "DownWall":
+		direction.y = direction.y * -1
+		
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.name == "PlayerArea":
+		direction.x = direction.x * -1
+		direction.y = direction.y + randf_range(-0.5, 0.5)

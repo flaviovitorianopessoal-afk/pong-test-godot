@@ -10,14 +10,14 @@ size = Vector2(10, 42)
 script = ExtResource("1_3vyb7")
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1645631076]
+[node name="PlayerArea" type="Area2D" parent="." unique_id=1645631076]
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1485315684]
+[node name="Sprite2D" type="Sprite2D" parent="PlayerArea" unique_id=1485315684]
 texture = ExtResource("2_g2els")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1882258728]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea" unique_id=1882258728]
 shape = SubResource("RectangleShape2D_qhqgy")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="PlayerArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PlayerArea" to="." method="_on_area_2d_body_exited"]
