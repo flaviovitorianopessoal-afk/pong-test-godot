@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bex1jkackugdy"]
+
+[node name="Player" type="Node2D" unique_id=751410029]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1645631076]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1485315684]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1882258728]
