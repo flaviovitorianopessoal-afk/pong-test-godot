@@ -1,3 +1,51 @@
 [gd_scene format=3 uid="uid://dpexc4g01whh5"]
 
+[ext_resource type="PackedScene" uid="uid://bex1jkackugdy" path="res://scenes/player.tscn" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://0lsln5j0ys3a" path="res://scenes/ball.tscn" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://b6klgvcw6d8dc" path="res://assets/wall.png" id="3_sugp2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
+size = Vector2(9, 249)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
+size = Vector2(267.5, 8.5)
+
 [node name="Main" type="Node" unique_id=1786730247]
+
+[node name="Player" parent="." unique_id=751410029 instance=ExtResource("1_0wfyh")]
+position = Vector2(13, 36)
+speed = 200
+
+[node name="Ball" parent="." unique_id=283703753 instance=ExtResource("2_sugp2")]
+position = Vector2(54, 43)
+
+[node name="Walls" type="Node2D" parent="." unique_id=1814877860]
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1441292534]
+
+[node name="WallLeft" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=4715534]
+position = Vector2(-5.5, 114.5)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=526004048]
+
+[node name="WallRight" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1111650781]
+position = Vector2(261, 115)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="UpWall" type="StaticBody2D" parent="Walls" unique_id=1292632214]
+
+[node name="WallUp" type="CollisionShape2D" parent="Walls/UpWall" unique_id=579519806]
+position = Vector2(129, -1)
+shape = SubResource("RectangleShape2D_sugp2")
+
+[node name="DownWall" type="StaticBody2D" parent="Walls" unique_id=956990950]
+
+[node name="WallDown" type="CollisionShape2D" parent="Walls/DownWall" unique_id=123342378]
+position = Vector2(131, 240)
+shape = SubResource("RectangleShape2D_sugp2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls" unique_id=257900405]
+position = Vector2(130, -3)
+scale = Vector2(1.046875, 1)
+texture = ExtResource("3_sugp2")
